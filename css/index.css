@@ -1,0 +1,90 @@
+.text-center {
+    text-align: center;
+}
+
+body {
+    background-color: transparent;
+    background: url("../img/hearthstone.jpg");
+    padding-top: 25px;
+}
+
+button{
+  align-content: center;
+}
+img {
+    background-color: transparent;
+}
+
+.row {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+    width=100%;
+}
+
+.col-md-2 {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.container {
+    padding-left: 160px;
+    padding-right: 160px;
+}
+
+.col-md-4 {
+    background-color: transparent;
+    padding: 0px;
+    padding-left:  0px;
+    padding-right:  0px;
+    margin: 0px;
+}
+
+.col-md-6 {
+    background-color: transparent;
+}
+
+*[id^='cardImg'] {
+    height=50%;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+  .flip-container.flip .flipper {
+  	transform: rotateY(180deg);
+  }
+  .flip-container.flip .flipper {
+	transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
