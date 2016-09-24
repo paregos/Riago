@@ -1,7 +1,5 @@
 /* entire container, keeps perspective */
 .flip-container {
-	margin-left: 10px;
-	margin-right: 10px;
 	perspective: 100vw;
 }
 	/* flip the pane when hovered */
@@ -12,24 +10,6 @@
 	transform: rotateY(180deg);
 }
 
-.flip-container, .front, .back {
-	width: 24vw;
-	height: 36vw;
-}
-
-@media screen and (max-width: 700px) {
-	.flip-container, .front, .back {
-		width: 24vw;
-		height: 36vw;
-	}
-}
-
-@media screen and (min-width: 700px) {
-	.flip-container, .front, .back {
-		width: 20vw;
-		height: 30vw;
-	}
-}
 
 /* flip speed goes here */
 .flipper {
@@ -64,6 +44,7 @@ body {
 		min-width:300px; /* suppose you want minimun width of 1000px */
 		width: auto !important;  /* Firefox will set width as auto */
 		width:300px;             /* As IE ignores !important it will set width as 1000px; */
+		font-size: 50%;
 }
 
 button{
@@ -86,17 +67,31 @@ img {
     margin: 0px;
 }
 
-@media screen and (max-width: 700px) {
+
+
+@media screen and (max-width: 767px) {
+	.col-sm-4{
+		width: 50%;
+		margin: 0 auto;
+		margin-left: 6vw;
+	}
 	.container {
-	    padding-left: 24vw;
-	    padding-right: 24vw;
+			padding-left: 24vw;
+			padding-right: 24vw;
+	}
+	.flip-container, .front, .back {
+		width: 34vw;
+		height: 51vw;
 	}
 }
-
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 767px) {
 	.container {
-	    padding-left: 160px;
-	    padding-right: 160px;
+			padding-left: 160px;
+			padding-right: 160px;
+	}
+	.flip-container, .front, .back {
+		width: 20vw;
+		height: 30vw;
 	}
 }
 
@@ -111,6 +106,7 @@ img {
 .bigButton{
 	margin-left: 20vw;
 	margin-right: 20vw;
+
 }
 
 .col-md-6 {
