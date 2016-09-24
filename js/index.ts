@@ -1,5 +1,6 @@
 var classicSet;
 var cardImgs = [0, 0, 0, 0, 0, 0];
+var cards = [0, 1, 2, 3, 4, 5];
 
 $(document).ready(function(){
 
@@ -15,7 +16,7 @@ $(document).ready(function(){
 
         classicSet = data;
         console.log(classicSet);
-        var cards = [0, 1, 2, 3, 4, 5];
+        cards = [0, 1, 2, 3, 4, 5];
         cardImgs = [0, 0, 0, 0, 0, 0];
           for (var i in cards) {
               console.log(i);
@@ -49,7 +50,7 @@ function flip(){
   document.querySelector('#flip-toggle4').classList.toggle('flip');
   document.querySelector('#flip-toggle5').classList.toggle('flip');
 
-  var cards = [0, 1, 2, 3, 4, 5];
+  cards = [0, 1, 2, 3, 4, 5];
   cardImgs = [0, 0, 0, 0, 0, 0];
     for (var i in cards) {
         var number = 1;
@@ -58,6 +59,8 @@ function flip(){
         }
         cardImgs[i] = number;
     }
+
+    doIt();
 
 }
 
@@ -71,7 +74,7 @@ function doIt() {
             // number = Math.floor(Math.random() * 100) + 0;
             // if (number < 10){
             //   console.log("golden" + cardImgs[i]);
-              $("#cardImg"+i).attr("src", classicSet[cardImgs[i]].imgGold);
+              $("#cardImg"+i).attr("src", classicSet[cardImgs[i]].img);
             // } else {
             //   $("#cardImg"+i).attr("src", classicSet[cardImgs[i]].img);
             // }

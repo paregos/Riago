@@ -13,8 +13,8 @@
 
     <title>Riago - Hearthstone card pack generator</title>
 
-      <!-- Latest compiled and minified CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -35,16 +35,41 @@ Place this code immediately before the closing </head> tag,
 and before any other scripts. Your first data will appear
 automatically in just a few seconds.
 -->
-<script type="text/javascript">
-  var appInsights=window.appInsights||function(config){
-    function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;s.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(s);try{t.cookie=u.cookie}catch(h){}for(t.queue=[],i=["Event","Exception","Metric","PageView","Trace","Dependency"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t
-    }({
-        instrumentationKey:"f9cb5bba-4ad5-409d-865d-3fd12fd07822"
-    });
+    <script type="text/javascript">
+        var appInsights = window.appInsights || function(config) {
+            function r(config) {
+                t[config] = function() {
+                    var i = arguments;
+                    t.queue.push(function() {
+                        t[config].apply(t, i)
+                    })
+                }
+            }
+            var t = {
+                    config: config
+                },
+                u = document,
+                e = window,
+                o = "script",
+                s = u.createElement(o),
+                i, f;
+            s.src = config.url || "https://az416426.vo.msecnd.net/scripts/a/ai.0.js";
+            u.getElementsByTagName(o)[0].parentNode.appendChild(s);
+            try {
+                t.cookie = u.cookie
+            } catch (h) {}
+            for (t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace", "Dependency"]; i.length;) r("track" + i.pop());
+            return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function(config, r, u, e, o) {
+                var s = f && f(config, r, u, e, o);
+                return s !== !0 && t["_" + i](config, r, u, e, o), s
+            }), t
+        }({
+            instrumentationKey: "f9cb5bba-4ad5-409d-865d-3fd12fd07822"
+        });
 
-    window.appInsights=appInsights;
-    appInsights.trackPageView();
-</script>
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
 </head>
 
 <body>
@@ -52,10 +77,9 @@ automatically in just a few seconds.
     <!-- Page Content -->
     <div class="container">
         <div class="row text-center">
-
-            <div class="col-md-4 col-sm-4 hero-feature">
-                <div class="flip-container" id ="flip-toggle0">
-                    <div class="flipper" >
+            <div class="col-xs-4 hero-feature">
+                <div class="flip-container" id="flip-toggle0">
+                    <div class="flipper">
                         <div class="front" onclick="document.querySelector('#flip-toggle0').classList.toggle('flip');">
                             <img class="img-responsive" src="img/Card_Back_Legend.gif" id="cardBack"></img>
                         </div>
@@ -66,9 +90,9 @@ automatically in just a few seconds.
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-4 hero-feature">
-                <div class="flip-container" id ="flip-toggle1">
-                    <div class="flipper" >
+            <div class="col-xs-4 hero-feature">
+                <div class="flip-container" id="flip-toggle1">
+                    <div class="flipper">
                         <div class="front" onclick="document.querySelector('#flip-toggle1').classList.toggle('flip');">
                             <img class="img-responsive" src="img/Card_Back_Legend.gif" id="cardBack"></img>
                         </div>
@@ -79,9 +103,9 @@ automatically in just a few seconds.
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-4 hero-feature">
-                <div class="flip-container" id ="flip-toggle2">
-                    <div class="flipper" >
+            <div class="col-xs-4 hero-feature">
+                <div class="flip-container" id="flip-toggle2">
+                    <div class="flipper">
                         <div class="front" onclick="document.querySelector('#flip-toggle2').classList.toggle('flip');">
                             <img class="img-responsive" src="img/Card_Back_Legend.gif" id="cardBack"></img>
                         </div>
@@ -95,14 +119,15 @@ automatically in just a few seconds.
         </div>
     </div>
 
+    <!-- Jumbotron Header -->
+    <div class="row text-center bigButton">
+        <button type="button" class="btn btn-primary btn-lg btn-block" onclick="flip()">Create new classic pack</button>
+    </div>
+
     <!-- Page Content -->
     <div class="container">
 
-        <!-- Jumbotron Header -->
-        <header class="jumbotron hero-spacer">
-            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="doIt()">Create new classic pack</button>
 
-        </header>
 
         <!-- /.row -->
 
@@ -111,44 +136,44 @@ automatically in just a few seconds.
 
         <div class="row text-center">
 
-          <div class="col-md-4 col-sm-4 hero-feature">
-              <div class="flip-container" id ="flip-toggle3">
-                  <div class="flipper" >
-                      <div class="front" onclick="document.querySelector('#flip-toggle3').classList.toggle('flip');">
-                          <img class="img-responsive" src="img/Card_Back_Legend.gif" id="cardBack"></img>
-                      </div>
-                      <div class="back" onclick="document.querySelector('#flip-toggle3').classList.toggle('flip');">
-                          <img class="img-responsive" src="" id="cardImg3"></img>
-                      </div>
-                  </div>
-              </div>
-          </div>
+            <div class="col-xs-4 hero-feature">
+                <div class="flip-container" id="flip-toggle3">
+                    <div class="flipper">
+                        <div class="front" onclick="document.querySelector('#flip-toggle3').classList.toggle('flip');">
+                            <img class="img-responsive" src="img/Card_Back_Legend.gif" id="cardBack"></img>
+                        </div>
+                        <div class="back" onclick="document.querySelector('#flip-toggle3').classList.toggle('flip');">
+                            <img class="img-responsive" src="" id="cardImg3"></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-          <div class="col-md-4 col-sm-4 hero-feature">
-              <div class="flip-container" id ="flip-toggle4">
-                  <div class="flipper" >
-                      <div class="front" onclick="document.querySelector('#flip-toggle4').classList.toggle('flip');">
-                          <img class="img-responsive" src="img/Card_Back_Legend.gif" id="cardBack"></img>
-                      </div>
-                      <div class="back" onclick="document.querySelector('#flip-toggle4').classList.toggle('flip');">
-                          <img class="img-responsive" src="" id="cardImg4"></img>
-                      </div>
-                  </div>
-              </div>
-          </div>
+            <div class="col-xs-4 hero-feature">
+                <div class="flip-container" id="flip-toggle4">
+                    <div class="flipper">
+                        <div class="front" onclick="document.querySelector('#flip-toggle4').classList.toggle('flip');">
+                            <img class="img-responsive" src="img/Card_Back_Legend.gif" id="cardBack"></img>
+                        </div>
+                        <div class="back" onclick="document.querySelector('#flip-toggle4').classList.toggle('flip');">
+                            <img class="img-responsive" src="" id="cardImg4"></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-          <div class="col-md-4 col-sm-4 hero-feature">
-              <div class="flip-container" id ="flip-toggle5">
-                  <div class="flipper" >
-                      <div class="front" onclick="document.querySelector('#flip-toggle5').classList.toggle('flip');">
-                          <img class="img-responsive" src="img/Card_Back_Legend.gif" id="cardBack"></img>
-                      </div>
-                      <div class="back" onclick="document.querySelector('#flip-toggle5').classList.toggle('flip');">
-                          <img class="img-responsive" src="" id="cardImg5"></img>
-                      </div>
-                  </div>
-              </div>
-          </div>
+            <div class="col-xs-4 hero-feature">
+                <div class="flip-container" id="flip-toggle5">
+                    <div class="flipper">
+                        <div class="front" onclick="document.querySelector('#flip-toggle5').classList.toggle('flip');">
+                            <img class="img-responsive" src="img/Card_Back_Legend.gif" id="cardBack"></img>
+                        </div>
+                        <div class="back" onclick="document.querySelector('#flip-toggle5').classList.toggle('flip');">
+                            <img class="img-responsive" src="" id="cardImg5"></img>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
@@ -167,7 +192,7 @@ automatically in just a few seconds.
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                     <p>*All images on this page belong to Blizzard Entertainment, *Click on cards to reveal them</p>
+                    <p>*All images on this page belong to Blizzard Entertainment, *Click on cards to reveal them</p>
                 </div>
             </div>
         </footer>

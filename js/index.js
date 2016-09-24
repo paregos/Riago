@@ -1,5 +1,6 @@
 var classicSet;
 var cardImgs = [0, 0, 0, 0, 0, 0];
+var cards = [0, 1, 2, 3, 4, 5];
 $(document).ready(function () {
     var output = $.ajax({
         url: 'https://omgvamp-hearthstone-v1.p.mashape.com/cards/sets/Classic',
@@ -9,7 +10,7 @@ $(document).ready(function () {
         success: function (data) {
             classicSet = data;
             console.log(classicSet);
-            var cards = [0, 1, 2, 3, 4, 5];
+            cards = [0, 1, 2, 3, 4, 5];
             cardImgs = [0, 0, 0, 0, 0, 0];
             for (var i in cards) {
                 console.log(i);
@@ -38,7 +39,7 @@ function flip() {
     document.querySelector('#flip-toggle3').classList.toggle('flip');
     document.querySelector('#flip-toggle4').classList.toggle('flip');
     document.querySelector('#flip-toggle5').classList.toggle('flip');
-    var cards = [0, 1, 2, 3, 4, 5];
+    cards = [0, 1, 2, 3, 4, 5];
     cardImgs = [0, 0, 0, 0, 0, 0];
     for (var i in cards) {
         var number = 1;
@@ -47,10 +48,11 @@ function flip() {
         }
         cardImgs[i] = number;
     }
+    doIt();
 }
 function doIt() {
     for (var i in cards) {
         console.log(document.getElementById("cardImg" + i));
-        $("#cardImg" + i).attr("src", classicSet[cardImgs[i]].imgGold);
+        $("#cardImg" + i).attr("src", classicSet[cardImgs[i]].img);
     }
 }
